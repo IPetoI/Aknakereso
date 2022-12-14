@@ -1,0 +1,502 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@media only screen and (max-width: 1200px) {
+    #savJobb ul li p{
+        width: 320px !important;
+        font-size: 12px !important;
+    }
+    #savKozep ul li p{
+        width: 110px !important;
+        font-size: 13px !important;
+    }
+    .pozicionalas {
+        width: 60px !important;
+        height: 18px !important;
+        font-size: 10px !important;
+    }
+    #zeneG {
+        width: 84px !important;
+        height: 59px !important;
+    }
+    #hangIkon, #nemaIkon {
+        width: 50% !important;
+        height: 50% !important;
+    }
+    #kezdoTopL, #kozepesTopL, #haladoTopL, #egyediTopL  {
+        font-size: 16px !important;
+        margin-left: 45px !important;
+    }
+    #top1Kezdo, #top1Kozepes, #top1Halado, #top1Egyedi {
+        font-size: 13px !important;
+    }
+}
+
+@media only screen and (max-width: 990px) {
+    #savJobb ul li p{
+        width: 300px !important;
+        font-size: 12px !important;
+    }
+    #savKozep ul li p{
+        width: 95px !important;
+        font-size: 12px !important;
+    }
+    .pozicionalas {
+        width: 50px !important;
+        height: 17px !important;
+        font-size: 10px !important;
+    }
+    #zeneG {
+        width: 74px !important;
+        height: 58px !important;
+    }
+    #hangIkon, #nemaIkon {
+        width: 50% !important;
+        height: 50% !important;
+    }
+    #kezdoTopL, #kozepesTopL, #haladoTopL, #egyediTopL  {
+        display: none;
+    }
+
+}
+
+@media only screen and (max-width: 560px) {
+    #lathatatlanJ, #lathatatlanB {
+        display: none !important;
+    }
+    #savKozep ul li p{
+        display: none !important;
+    }
+    .pozicionalas {
+        width: 37px !important;
+        height: 20px !important;
+        font-size: 10px !important;
+    }
+    #zeneG {
+        width: 74px !important;
+        height: 58px !important;
+        margin-top: 1px !important;
+        left: 18% !important;
+    }
+    #hangIkon, #nemaIkon {
+        width: 50% !important;
+        height: 50% !important;
+    }
+    #kezdoTopL, #kozepesTopL, #haladoTopL, #egyediTopL  {
+        display: none;
+    }
+    span {
+        font-size: 15px !important;
+    }
+}
+
+body {
+    font-family: Arial;
+    font-size: 13px;
+    margin: 0;
+    background: linear-gradient(90deg, #1a1a1a, #535353 ,#d3d3d3 ,#535353 , #1a1a1a);
+}
+
+span {
+    display: block;
+    position: relative;
+    min-width: 150px;
+    background: #2b2b2b;
+    color: #DDD;
+    font-size: 18px;
+    text-shadow: white 1px 0 1px;
+    font-weight: bold;
+    margin: 0;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav li {
+    flex: auto;
+    z-index: 100;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    width: 100%;
+}
+
+nav li ul {
+    display: block;
+    visibility: hidden;
+    max-width: 150px;
+    z-index: 50;
+}
+
+nav li p {
+    color: #DDD;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+nav li ul li p {
+    background: #555555;
+    color: #DDD;
+    font-size: 15px;
+    padding: 10px;
+    text-align: left;
+}
+
+#savKozep {
+    margin: 0 1px;
+}
+
+#savKozep ul , #savBal ul {
+    display: flex;
+}
+
+#pozicioCim {
+    position: relative;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    width: 127px;
+    margin: 0 1.5px 1.5px 0;
+    left: 0%;
+    text-align: center;
+    background: linear-gradient(130deg, #7a7a7a ,#3a3a3a ,#7a7a7a );
+}
+
+.pozicionalInput {
+    position: relative;
+    top: 2px;
+    left: 3px;
+}
+
+.pozicional {
+    position: relative;
+    margin-right: 1.5px;
+}
+
+.pozicionalas {
+    position: relative;
+    width: 96px;
+    padding-top: 20px;
+    padding-bottom: 21px;
+    height: 20px;
+}
+
+#hangCim {
+    position: relative;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    width: 127px;
+    left: 0%;
+    text-align: center;
+    background: linear-gradient(130deg, #7a7a7a ,#3a3a3a ,#7a7a7a );
+}
+
+#zeneG {
+    position: relative;
+    margin-left: 1.5px;
+    width: 121px;
+    height: 62px;
+    background-color: #545454;
+    color: #ffffff;
+    border-style: none;
+}
+
+#zeneG:active {
+    border-radius: 5px;
+    transform: translateY(1px);
+}
+
+#zeneG:hover #hangIkon {
+    color: #cccccc;
+}
+
+#zeneG:hover #nemaIkon {
+    color: #5a5a5a;
+}
+
+#hangIkon {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    height: 80%;
+    display: block;
+}
+
+#nemaIkon {
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    height: 80%;
+    color: #000000;
+}
+
+#savJobb ul li p {
+    position: relative;
+    padding: 5px;
+    font-size: 14px;
+    width: 450px;
+}
+
+label {
+    display: block;
+    background: #545454;
+    color: #DDD;
+    font-size: 15px;
+    padding: 12px;
+    text-align: center;
+}
+
+#valaszthatoF td {
+    background: #2d2d2d;
+}
+
+#sajatP, #labelAkna {
+    background: #454545;
+    color: #ffffff;
+}
+
+#savBal tr{
+    background: #606060;
+    color: #DDD;
+    font-size: 15px;
+    padding: 10px;
+    text-align: center;
+}
+
+#sajat {
+    padding-right: 5px;
+    margin-bottom: 1.5px;
+    width: 200px;
+    color: white;
+    background: linear-gradient(160deg, #6d6d6d ,#363636 ,#6d6d6d);
+}
+
+table{
+    width: 370.5px;
+}
+
+input {
+    margin-right:  5px;
+}
+
+#aknak {
+    margin-bottom: 30.5px;
+    margin-left:  13px;
+    text-align: center;
+}
+
+#labelAkna {
+    padding: 10px;
+}
+
+#ujJatek {
+    visibility: hidden;
+    position: relative;
+    top: -32px;
+    left: 15%;
+    background: #DDDDDD;
+    z-index: 100;
+    padding: 1px 5px;
+}
+
+#valaszthato {
+    margin-left: 1.5px;
+    width: 347.5px;
+    background: linear-gradient(160deg, #6d6d6d ,#363636 ,#6d6d6d);
+    color: #f3f3f3;
+}
+
+#kezdo {
+    position: relative;
+    left: 9px;
+    top: 2px;
+}
+
+#kozepes {
+    position: relative;
+    left: 2px;
+    top: 2px;
+}
+
+#halado {
+    position: relative;
+    left: 7px;
+    top: 2px;
+}
+
+#lathatatlanK, #lathatatlanJ, #lathatatlanB {
+    display: none;
+    z-index: 1;
+}
+
+#lathatoK:hover #lathatatlanK ul, #lathatoB:hover #lathatatlanB ul, #lathatoJ:hover #lathatatlanJ ul, #lathatoB:hover #ujJatek {
+    visibility: visible;
+}
+
+#lathatoB:hover #lathatatlanB, #lathatoK:hover #lathatatlanK, #lathatoJ:hover #lathatatlanJ {
+    display: block;
+}
+
+#lathatoK {
+    position: relative;
+}
+
+#jatekTer {
+    position: absolute;
+    display: none;
+    top: 50%;
+    left: 50%;
+    margin-top: -200px;
+    z-index: 10;
+}
+
+#jatekFejlec {
+    position: absolute;
+    background-color: #b3b3b3;
+    top: 50%;
+    left: 50%;
+    margin-left: -172px;
+    margin-top: -290px;
+    width: 345px;
+    height: 70px;
+    border: 10px solid  ;
+    border-image: url(kepek/keret.png) 16%;
+    border-image-width: 200px;
+    z-index: 10;
+}
+
+.cella {
+    float: left;
+    width: 49px;
+    height: 49px;
+    font-size: 1px;
+}
+
+.gomb {
+    background-image: url("kepek/alapf.jpg");
+    position: absolute;
+    width: 53px;
+    height: 53px;
+    top: 50%;
+    left: 50%;
+    margin-left: -26px;
+    margin-top: -26px;
+}
+
+#ido {
+    position: absolute;
+    width: 30px;
+    height: 53px;
+    left: 70px;
+    top: 50%;
+    margin-top: -26px;
+}
+
+#idoTiz {
+    position: absolute;
+    width: 30px;
+    height: 53px;
+    left: 40px;
+    top: 50%;
+    margin-top: -26px;
+}
+
+#idoSzaz {
+    position: absolute;
+    width: 30px;
+    height: 53px;
+    left: 10px;
+    top: 50%;
+    margin-top: -26px;
+}
+
+#aknakSzama {
+    position: absolute;
+    width: 30px;
+    height: 53px;
+    right: 10px;
+    top: 50%;
+    margin-top: -26px;
+    font-size: 1px;
+}
+
+#aknakSzamaTiz {
+    position: absolute;
+    width: 30px;
+    height: 53px;
+    right: 40px;
+    top: 50%;
+    margin-top: -26px;
+}
+
+#aknakSzamaSzaz {
+    position: absolute;
+    width: 30px;
+    height: 53px;
+    right: 70px;
+    top: 50%;
+    margin-top: -26px;
+}
+
+.gomb:active {
+    background-image: url("kepek/alapf_nyom.jpg");
+    transform: translateX(2px);
+}
+
+.cella:active {
+    background-image: url("kepek/alap.jpg");
+    transform: translateX(2px);
+}
+
+#helyezes {
+    background-image:linear-gradient(0deg, rgb(0, 0, 0), transparent);
+    position: absolute;
+    bottom: 50px;
+    height: 150px;
+    width: 100%;
+    backdrop-filter: blur(20px);
+}
+
+#helyezes h2 {
+    position: absolute;
+    font-size: 25px;
+    padding: 20px 0 0 20px;
+    color: #cccccc;
+}
+
+#top1Kezdo, #top1Kozepes, #top1Halado, #top1Egyedi {
+    position: relative;
+    color: #aaaaaa;
+    font-size: 18px;
+}
+
+#kozepesTopL {
+    top: 60px;
+    
+}
+
+#haladoTopL {
+    left: 68%;
+}
+
+#egyediTopL {
+    left: 68%;
+    top: 60px;
+}
+
+footer {
+    background: linear-gradient(120deg, rgba(255, 255, 255, 0), rgba(0, 0, 0, 1), rgba(255, 255, 255, 0));
+    position: absolute;
+    height: 50px;
+    bottom: 0;
+    width: 100%;
+}
+
+footer h2{
+    text-align:center;
+    padding-top: 15px;
+    color: white;
+}

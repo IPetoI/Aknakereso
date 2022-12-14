@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Aknakereső</title>
+    <link rel="icon" href="kepek/akna_ikon.png">
+    <script src="jquery-3.4.1.min.js"></script>
+    <script src="Aknakereso.js"></script>
+    <link rel="stylesheet" href="Aknakereso.css">
+    <meta name="author" content="Pető József"/>
+    <meta name="keywords" content="Aknakereső, Akna, Játék"/>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li id="savBal">
+                    <div id="lathatoB">
+                    <span>Nehézségi Fokozat</span>
+                    <div id="lathatatlanB">
+                    <ul>
+                        <li>
+                            <p id="sajat">Hozz Létre Sajátot:</p>
+                            <label id="sajatP">Pálya Mérete: <br><br>
+                                <input type="radio" id="radio5" name="valasztas" value=5 onclick="maxAknakSzama()"> 5 &nbsp;
+                                <input type="radio" id="radio7" name="valasztas" value=7 onclick="maxAknakSzama()" checked > 7 &nbsp;
+                                <input type="radio" id="radio10" name="valasztas" value=10 onclick="maxAknakSzama()"> 10 &nbsp;
+                            </label>
+                            <label id="labelAkna" for="aknak">Aknák Száma: <input type="number" id="aknak" name="aknak"
+                                min="1" max="47" value="1" ></label>
+                        </li>
+                        <li>
+                            <p id="valaszthato">Válassz Nehézségi Fokozatot:</p>
+                            <table>
+                                <tr id="valaszthatoF">
+                                    <td>Szint</td>
+                                    <td>Magasság</td>
+                                    <td>Szélesség</td>
+                                    <td id="tablazatAknasz">Aknák Száma</td>
+                                </tr>
+                                <tr>
+                                    <td><label for="kezdo">Kezdő: <input  type="radio" id="kezdo" name="fokozat" ></label></td>
+                                    <td>5</td>
+                                    <td>5</td>
+                                    <td>4</td>
+                                </tr>
+                                <tr>
+                                    <td><label for="kozepes">Közepes: <input type="radio" id="kozepes" name="fokozat" checked></label></td>
+                                    <td>7</td>
+                                    <td>7</td>
+                                    <td>12</td>
+
+                                </tr>
+                                <tr>
+                                    <td><label for="halado">Haladó: <input type="radio" id="halado" name="fokozat"></label></td>
+                                    <td>10</td>
+                                    <td>10</td>
+                                    <td>36</td>
+                                </tr>
+                            </table>
+                        </li>
+                    </ul>
+                    <input type="submit" id="ujJatek" value="Új játék">
+                    </div>
+                    </div>
+                </li>
+
+                <li id="savKozep">
+                    <div id="lathatoK">
+                    <span>Játéktér Beállítások</span>
+                    <div id="lathatatlanK">
+                    <ul>  
+                        <li><p id="pozicioCim">Pálya Pozíciója:</p></li>
+                            <li class="pozicional"><label class="pozicionalas" for="bal">Bal oldalt <input class="pozicionalInput"
+                                type="radio" id="bal" name="pozicio" ></label></li>
+                            <li class="pozicional"><label class="pozicionalas" for="kozep">Középen <input class="pozicionalInput"
+                                type="radio" id="kozep" name="pozicio" checked></label></li>
+                            <li class="pozicional"><label class="pozicionalas" for="jobb">Jobb oldalt <input class="pozicionalInput"
+                                type="radio" id="jobb" name="pozicio"></label></li>
+                    </ul>
+                    <ul>
+                        <li><p id="hangCim">Zene:</p></li>
+                        <li>
+                            <button id="zeneG">
+                                <ion-icon name="volume-high-outline" id="hangIkon"></ion-icon>
+                                <ion-icon name="volume-mute-outline"  id="nemaIkon"></ion-icon>
+                            </button>
+                        </li>
+                    </ul>
+                    </div>
+                    </div>
+                </li>
+
+                <li id="savJobb">
+                    <div id="lathatoJ">
+                    <span>Súgó</span>
+                        <div id="lathatatlanJ">
+                    <ul>
+                        <li><p>A játékról:</p></li>
+                        <li><p>A mezők alatt aknák terülnek el, amiket ha elkerülsz és minden más cellát felfedsz akkor 
+                            <em><strong>nyertél</strong></em>.<br>
+                            Egy mezőt kattintással tudsz megtekinteni, de kezdéskor nem tudsz aknát feldedni.<br>
+                            Ha egy mező feltárult, és mellette akna található, akkor annak darabszámát fogja
+                            jelezni (egy mező mellett értelemszerűen maximum 8 akna fér el).<br>
+                            Ha a játékos aknamentes környezetű mezőre kattint, akkor az adott mezőhöz oldal- és sarokhatárosan
+                             csatlakozó (aknamentes) mezők mindegyike
+                            feltárul, valamint az így feltáruló aknamentes "szigettel" szomszédos mezők is.<br>
+                            A program folyamatosan jelzi az aknák számát, illetve az eltelt időt.<br></p></li>
+                        <li><p><br>Zázlszót jobb gomb lenyomásával tudsz letenni és ezzel jelzed magadnak hogy ott akna lehet.<br>
+                            A győzelem elérése nem függ attól, hogy hány aknát jelöltünk meg zászlóval, illetve hogy használtunk-e.<br></p></li>
+                        <li><p><br>A játék célja:</p></li>
+                        <li><p>Teljesíteni a táblát a lehető legrövidebb idő alatt.<br>
+                            Ha aknára kattintunk, az adott mező "felrobban", tehát a játék véget ér, s az adott menetet elvesztettük.<br>
+                            Győzelemmel kizárólag abban az esetben fejeződik be a játék, ha felfedtünk minden olyan mezőt, amely 
+                            alatt nincs akna.<br>
+                        </p></li>
+                        <li><p><br>Egyéni játék:</p></li>
+                        <li><p>Egyéni aknaszámú pályát is létrehozhatsz, három különböző méretben is.<br>
+                            A pályán legalább kettő aknamentes mező helyezkedik el.
+                        </p></li>
+                    </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="jatekFejlec">
+        <div>
+            <div class="kijelzo" id="ido"></div>
+            <div class="kijelzo" id="idoTiz"></div>
+            <div class="kijelzo" id="idoSzaz"></div>
+            <button class="gomb" id="ujJatekGomb"></button>&nbsp;
+            <div class="kijelzo" id="aknakSzama"></div>
+            <div class="kijelzo" id="aknakSzamaTiz"></div>
+            <div class="kijelzo" id="aknakSzamaSzaz"></div>
+        </div>
+    </main>
+
+    <div id="terkoz"></div>
+
+    <article id="helyezes">
+            <h2 id="kezdoTopL">Legjobb helyezett kezdő szinten: </h2>
+            <h2 id="kozepesTopL">Legjobb helyezett közepes szinten: </h2>
+            <h2 id="haladoTopL">Legjobb helyezett haladó szinten: </h2>
+            <h2 id="egyediTopL">Legjobb helyezett egyedi szinten: </h2>
+    </article>
+
+    <footer> 
+        <h2>Pető József &copy; Copyright 2021</h2>
+    </footer>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
